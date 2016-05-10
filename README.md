@@ -30,7 +30,7 @@ You can also specify custom comparison expression:
 							
 Unmatched properties in any of 2 types will make any 2 instances not equal.
 
-You can skip equality check by that property with method Skip(), a wrapper around DeepEqual's IgnoreProperty()
+You can skip equality check of that property with method Skip(), a wrapper around DeepEqual's IgnoreProperty()
 
 
 	var comparer = ExtendedComparer<A1, A2>.New()
