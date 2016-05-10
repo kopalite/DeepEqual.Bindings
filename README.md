@@ -41,7 +41,7 @@ E.G. AutoMapper.CreateMap() specifies how to make A2 instance out of A1 instance
 	Assert.IsTrue(comparer.Compare(a1, a2, out differences), differences);
 
 So, as soon as you add a new property in A1 that doesn't exist in A2, test will fail.	
-Enjoy using the library and let me know if I can make it better.
+You don't need to create large chunks of assertions by comparing each property individually.
 
  
 
