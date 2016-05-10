@@ -1,11 +1,9 @@
 # DeepEqual.Bindings
 
 DeepEqual.Bindings is extension of excelent DeepEqual library for comparing objects by values.
-
 It compares 2 object graphs by matching node names (reference property names) and values only. 
 
 Example: Instances a1 and a2 of class A1 and A2 below are considered equal.
-
 It doesn't matter that typeof(A1) != typeof(A2) or typeof(B1) != typeof(B2).
 	
 	var a1 = new A1 { B = new B1 { Y = "value" } };
@@ -16,7 +14,6 @@ It doesn't matter that typeof(A1) != typeof(A2) or typeof(B1) != typeof(B2).
 	
 	
 If type A1 had property B named differently (e.g. 'DifferentName'), these 2 instances would not be equal.
-
 DeepEqual.Bindings overcomes that obstacle - you can bind properties with diferent names during comparison:
 
 	var comparer = ExtendedComparer<A1, A2>.New().Bind(x1 => x1.DifferentName, x2 => B);
@@ -29,7 +26,6 @@ You can also specify custom comparison expression:
 			   (x1, x2) => x1.DifferentName.Y == "foo" && x2.Y == "bar");
 							
 Unmatched properties in any of 2 types will make any 2 instances not equal.
-
 You can skip equality check of that property with method Skip(), a wrapper around DeepEqual's IgnoreProperty()
 
 
@@ -38,7 +34,6 @@ You can skip equality check of that property with method Skip(), a wrapper aroun
 				.Skip(x1 => x1.SomeOtherName)
 												 
 The whole idea works extremly well in unit test for mappers (like AutoMapper, ExpressMapper etc.)
-
 E.G. AutoMapper.CreateMap() creates a way how to make A2 instance out of A1 in very custom way.
 
 	var a2 = AutoMapper.Map<A1, A2>(a1);
