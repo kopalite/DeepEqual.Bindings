@@ -34,11 +34,13 @@ You can skip equality check of that property with method Skip(), a wrapper aroun
 				.Skip(x1 => x1.SomeOtherName)
 												 
 The whole idea works extremly well in unit test for mappers (like AutoMapper, ExpressMapper etc.)
-E.G. AutoMapper.CreateMap() creates a way how to make A2 instance out of A1 in very custom way.
+E.G. AutoMapper.CreateMap() specifies how to make A2 instance out of A1 instance in a custom way.
 
+        AutoMapper.CreateMap<A1, A2>(/* expressions */)
 	var a2 = AutoMapper.Map<A1, A2>(a1);
 	Assert.IsTrue(comparer.Compare(a1, a2, out differences), differences);
-	
+
+So, as soon as you add a new property in A1 that doesn't exist in A2, test will fail.	
 Enjoy using it and let me know if I can make it better.
 
  
