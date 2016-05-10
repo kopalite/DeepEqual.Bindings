@@ -75,13 +75,18 @@ namespace DeepEqual.Bindings
                 var areEqual = _comparison(obj1, obj2);
                 if (!areEqual)
                 {
-                    ComparisonResult = string.Format("Bound properties '{0}' and '{1}' are not equal by comparison '{3}'", _sourceName, _destinationName, _comparisonDescription);
+                    ComparisonResult = string.Format("Bound properties '{0}' and '{1}' are not equal by comparison '{2}'", _sourceName, _destinationName, _comparisonDescription);
                 }
             }
             catch (Exception ex)
             {
                 ComparisonResult = ex.Message; 
             }
+        }
+
+        public PropertyBinder<TDestination, TSource> Reversed()
+        {
+            return new PropertyBinder<TDestination, TSource>(Destination, Source, (x1, x2) => _comparison(x2, x1));
         }
     }
 }

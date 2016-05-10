@@ -5,11 +5,11 @@ namespace DeepEqual.Bindings
 {
     internal sealed class PropertySkipper<TType> where TType : class
     {
-        private readonly Expression<Func<TType, object>> _property;
+        public Expression<Func<TType, object>> Property { get; private set; }
 
         public PropertySkipper(Expression<Func<TType, object>> property)
         {
-            _property = property;
+            Property = property;
         }
     }
 }
