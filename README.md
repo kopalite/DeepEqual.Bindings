@@ -1,7 +1,7 @@
 # DeepEqual.Bindings
 
 DeepEqual.Bindings is extension of excelent DeepEqual library for comparing objects by values.
-It compares 2 object graphs by matching node names (reference property names) and values only. 
+It compares 2 object graphs by matching node names and values only. 
 
 Example: Instances a1 and a2 of class A1 and A2 below are considered equal.
 It doesn't matter that typeof(A1) != typeof(A2) or typeof(B1) != typeof(B2).
