@@ -21,7 +21,7 @@ DeepEqual.Bindings overcomes that obstacle - you can bind properties with difere
 You can also specify custom comparison expression:
 
 	var comparer = ExtendedComparer<A1, A2>.New().Bind(x1 => x1.DifferentName, x2 => B, 
-							(x1, x2) => x1.DifferentName.Y == "anything you say" && x2.Y == "you take my breath away");
+							(x1, x2) => x1.DifferentName.Y == "foo" && x2.Y == "bar");
 							
 Unmatched properties in any of 2 types will make any 2 instances not equal.
 You can skip equality check by that property with method Skip(), a wrapper around DeepEqual's IgnoreProperty()
