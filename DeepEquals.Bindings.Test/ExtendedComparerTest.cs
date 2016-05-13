@@ -12,23 +12,8 @@ namespace DeepEquals.Bindings.Test
         {
             //Arrange
 
-            var a = new A
-            {
-                B = new B
-                {
-                    TestDeep = "x",
-                    TestBind = "y"
-                }
-            };
-
-            var a1 = new A1
-            {
-                B = new B1
-                {
-                    TestDeep = "x",
-                    TestBind1 = "y"
-                }
-            };
+            var a =  new A  { B = new B  { TestDeep = "x", TestBind = "y" }};
+            var a1 = new A1 { B = new B1 { TestDeep = "x", TestBind1 = "y" } };
 
             //Act
 
@@ -51,23 +36,8 @@ namespace DeepEquals.Bindings.Test
         {
             //Arrange
 
-            var a = new A
-            {
-                B = new B
-                {
-                    TestDeep = "x",
-                    TestBind = "y"
-                }
-            };
-
-            var a1 = new A1
-            {
-                B = new B1
-                {
-                    TestDeep = "x",
-                    TestBind1 = "y"
-                }
-            };
+            var a = new A { B = new B { TestDeep = "x", TestBind = "y" } };
+            var a1 = new A1 { B = new B1 { TestDeep = "x", TestBind1 = "y" } };
 
             //Act
 
