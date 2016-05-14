@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>DeepEqual.Bindings</id>
+        <version>1.0.0.6</version>
+        <title>DeepEqual.Bindings</title>
+        <authors>Ivan Kopcanski</authors>
+        <owners>Ivan Kopcanski</owners>
+        <licenseUrl>https://github.com/kopalite/DeepEqual.Bindings/blob/master/license.txt</licenseUrl>
+        <projectUrl>https://github.com/kopalite/DeepEqual.Bindings</projectUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>
+DeepEqual.Bindings extends the idea of comparing 2 object graphs (DeepEqual library). 
+By default, nodes not matched by name between graphs make objects not equal.
+With DeepEqual.Bindings you can override that behavior. 
+You can bind nodes with different names by specifying how they are compared by expression. 
+The most common usage looks like this:
+
+var a1 = new A1 { B1 = new B1 { Y = "value" } };
+var a2 = new A2 { B2 = new B2 { Y = "value" } };
+var comparer = ExtendedComparer&lt;A1, A2&gt;.New()
+.Bind(x1 =&gt; x1.B1, x2 =&gt; x2.B2);
+var result = comparer.Compare(a1, a2); 
+//result is true.
+      </description>
+      <summary>
+DeepEqual.Bindings extends the idea of comparing 2 object graphs (DeepEqual library).
+By default, nodes not matched by name between graphs make objects not equal.
+With DeepEqual.Bindings you can override that behavior by binding nodes and specifying how they are compared.
+      </summary>
+        <releaseNotes>Available functionalities:
+ExtendedComparer.Bind()
+ExtendedComparer.Skip()
+ExtendedComparer.Reversed()
+Unit tests are added.
+        </releaseNotes>
+        <copyright>Ivan Kopcanski 2016</copyright>
+        <language>en-US</language>
+        <tags>DeepEqual DeepEqual.Bindings AutoMapper ExpressMapper</tags>
+        <dependencies>
+            <dependency id="DeepEqual" version="1.6.0" />
+        </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Data" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Data.DataSetExtensions" targetFramework="" />
+            <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework="" />
+        </frameworkAssemblies>
+    </metadata>
+	<files>
+		<file src="..\bin\Release\DeepEqual.Bindings.dll" target="lib" />
+	</files>
+</package>
